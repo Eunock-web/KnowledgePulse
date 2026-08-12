@@ -122,8 +122,75 @@
 
     <!--Main-->
     <main>
-        
+
+        <!--Bandeau partenaires-->
+        <section class="bg-white px-4 py-12 md:px-10 lg:px-20 lg:py-16">
+            <h2 class="text-center text-sm text-[#0F7362] md:text-base">Join the 2000+ companies we're already learn with</h2>
+
+            <!--Logo companies-->
+            <ul class="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-8 md:mt-10 md:gap-x-16">
+
+                <li class="flex items-center gap-1.5 text-[#083C3B] opacity-70 transition-opacity hover:opacity-100">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2c-1.1 0-1.9.6-2.5 1.8L4.3 14.6c-.6 1.2-.9 2.2-.9 3.1 0 2.5 1.9 4.3 4.4 4.3 1.6 0 3.1-.8 4.2-2.2 1.1 1.4 2.6 2.2 4.2 2.2 2.5 0 4.4-1.8 4.4-4.3 0-.9-.3-1.9-.9-3.1L14.5 3.8C13.9 2.6 13.1 2 12 2Zm0 1.9c.4 0 .7.3 1 .9l5.2 10.7c.5 1 .7 1.7.7 2.3 0 1.5-1.1 2.5-2.6 2.5-1.3 0-2.5-.8-3.4-2.2 1.4-1.8 2.2-3.4 2.2-4.7 0-1.8-1.3-3.1-3.1-3.1s-3.1 1.3-3.1 3.1c0 1.3.8 2.9 2.2 4.7-.9 1.4-2.1 2.2-3.4 2.2-1.5 0-2.6-1-2.6-2.5 0-.6.2-1.3.7-2.3L11 4.8c.3-.6.6-.9 1-.9Zm0 8.2c.8 0 1.3.5 1.3 1.4 0 .8-.5 1.9-1.3 3.2-.8-1.3-1.3-2.4-1.3-3.2 0-.9.5-1.4 1.3-1.4Z"/>
+                    </svg>
+                    <span class="text-4xl font-semibold tracking-tight">Airbnb</span>
+                </li>
+
+                <li class="text-4xl tracking-tight text-[#083C3B] opacity-70 transition-opacity hover:opacity-100">
+                    <span class="font-bold">getty</span>images
+                </li>
+
+                <li class="text-[#083C3B] opacity-70 transition-opacity hover:opacity-100">
+                    <span class="relative block text-4xl font-bold tracking-tight">
+                        amazon
+                        <svg class="absolute -bottom-2 left-1 w-[85%]" viewBox="0 0 100 12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" d="M2 3c14 6 33 7 46 7s31-1 44-7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M85 1.5 93 3.5 88.5 9"/>
+                        </svg>
+                    </span>
+                </li>
+
+                <li class="text-4xl font-bold tracking-tight text-[#083C3B] opacity-70 transition-opacity hover:opacity-100">
+                    fiverr<sup class="text-xs font-normal">&reg;</sup>
+                </li>
+
+                <li class="text-4xl font-extrabold tracking-tight text-[#083C3B] opacity-70 transition-opacity hover:opacity-100">
+                    w<span class="italic">i</span>sh
+                </li>
+            </ul>
+        </section>
+
     </main>
+
+    <!-- PostFooter -->
+    <section class="relative overflow-hidden bg-[#E8F7F3] px-4 py-16 text-center md:px-10 lg:px-20 lg:py-24">
+
+        <!-- Formes décoratives -->
+        <div class="pointer-events-none absolute bottom-10 left-4 h-14 w-24 rounded-b-full bg-[#A6CCC2] md:left-10 lg:h-20 lg:w-36"></div>
+        <div class="pointer-events-none absolute right-4 top-10 h-14 w-24 rounded-b-full bg-[#A6CCC2] md:right-10 lg:h-20 lg:w-36"></div>
+
+        <div class="relative z-10 mx-auto flex max-w-xl flex-col items-center">
+            <h2 class="text-3xl font-bold text-[#083C3B] lg:text-4xl">
+                <span class="relative inline-block">
+                    <!-- Cercle tracé à la main -->
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-[150%] w-[118%] -translate-x-1/2 -translate-y-1/2" viewBox="0 0 200 70" preserveAspectRatio="none" fill="none" stroke="#D9F55C" stroke-width="3" aria-hidden="true">
+                        <path stroke-linecap="round" d="M170 20C163 9 124 3 88 4 46 5 9 15 6 33c-3 18 36 32 90 32 41 0 77-11 80-27 1-7-4-13-12-17"/>
+                    </svg>
+                    <span class="relative">Subscribe</span>
+                </span>
+                Our Newsletter
+            </h2>
+
+            <p class="mt-4 max-w-md text-sm leading-relaxed text-[#0F7362] lg:text-base">Join now to receive personalized recommendations from the full Coursera catalog.</p>
+
+            <form class="mt-8 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:gap-0 sm:overflow-hidden sm:rounded-lg sm:shadow-sm">
+                <label for="newsletter-email" class="sr-only">Enter your mail</label>
+                <input id="newsletter-email" type="email" required placeholder="Enter your mail" class="w-full min-w-0 rounded-lg bg-white px-5 py-3.5 text-left text-gray-700 placeholder-gray-400 outline-none sm:flex-1 sm:rounded-none">
+                <button type="submit" class="shrink-0 rounded-lg bg-[#0F7362] px-8 py-3.5 font-medium text-white transition-colors hover:cursor-pointer hover:bg-[#12786A] sm:rounded-none">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
     <!--Footer-->
     <footer class="bg-[#083C3B] px-4 py-12 md:px-10 lg:px-20 lg:py-16">
