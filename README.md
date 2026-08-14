@@ -12,8 +12,6 @@ Site vitrine de cinq pages entièrement responsives. Tous les composants interac
 - [Prise en main](#prise-en-main)
 - [Structure du projet](#structure-du-projet)
 - [Charte graphique](#charte-graphique)
-- [Interactions sans JavaScript](#interactions-sans-javascript)
-- [Compatibilité navigateurs](#compatibilité-navigateurs)
 - [Limitations connues](#limitations-connues)
 - [Pistes d'amélioration](#pistes-damélioration)
 - [Crédits](#crédits)
@@ -96,7 +94,6 @@ Elearning/
 └── README.md
 ```
 
-> Les dossiers `css/`, `js/` et `src/` sont vides ou ne contiennent que des fichiers d'amorce. Ils ne sont référencés par aucune page : la mise en forme provient exclusivement du CDN Tailwind.
 
 ## Charte graphique
 
@@ -112,13 +109,6 @@ Elearning/
 | Accent décoratif | `#D9F55C` | Jaune citron |
 | Formes décoratives | `#A6CCC2`, `#C6E3B8` | Verts pâles |
 
-### Espacements
-
-Les marges extérieures des sections suivent systématiquement la même progression :
-
-```html
-px-4 md:px-10 lg:px-20
-```
 
 ### Conventions
 
@@ -126,46 +116,7 @@ px-4 md:px-10 lg:px-20
 - Un seul `<h1>` par page ; les titres de sections sont des `<h2>`.
 - Les couleurs de la charte sont écrites en valeurs arbitraires (`bg-[#083C3B]`), la palette Tailwind par défaut n'étant utilisée que pour les gris.
 
-## Interactions sans JavaScript
 
-Quatre techniques couvrent l'ensemble des composants interactifs du site.
-
-### 1. Menu mobile — case à cocher masquée
-
-Une case à cocher en `sr-only` sert d'interrupteur, un `<label>` la bascule au clic, et le variant `group-has-checked` révèle le panneau :
-
-```html
-<nav class="group">
-    <input type="checkbox" id="menu-toggle" class="sr-only">
-    <label for="menu-toggle">…</label>
-    <div class="hidden group-has-checked:block">…</div>
-</nav>
-```
-
-`group-has-checked` repose sur le sélecteur CSS `:has()`, ce qui permet à un élément **imbriqué à n'importe quel niveau** de réagir à l'état de la case — contrairement à `peer-checked`, limité aux éléments frères.
-
-### 2. Accordéons — `<details>` natif
-
-```html
-<details name="faq" class="group">
-    <summary>Question…</summary>
-    <p>Réponse…</p>
-</details>
-```
-
-L'ouverture est gérée par le navigateur. L'attribut **`name` partagé** rend l'accordéon exclusif : ouvrir un panneau referme les autres. Le variant `group-open:` pilote l'icône (`+` qui perd sa barre verticale, ou chevron qui pivote).
-
-### 3. Carrousel de témoignages — boutons radio
-
-Quatre `<input type="radio">` de même `name`, masqués, et des variants `group-has-[#testimonial-1:checked]:` qui affichent le témoignage correspondant tout en marquant l'avatar actif d'un anneau.
-
-### 4. Carrousels de cartes — scroll snap
-
-```html
-<ul class="flex snap-x snap-mandatory overflow-x-auto">
-    <li class="w-[85%] shrink-0 snap-start lg:w-[calc(25%-1.125rem)]">…</li>
-</ul>
-```
 
 Défilement tactile natif avec calage sur le début de chaque carte. En desktop, la largeur calculée fait tenir les quatre cartes sans débordement : le carrousel devient une grille statique, sans changer de mécanique.
 
