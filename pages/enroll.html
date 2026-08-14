@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>KnowledgePulse | About</title>
+    <title>KnowledgePlus | Mentor</title>
 </head>
 <body>
-        <header class="bg-[#E8F7F3] flex flex-col gap-5  ">
+    <!--Header-->
+    <header class=" bg-[#E8F7F3] flex flex-col gap-5 ">
         <nav class="group px-4 py-4 md:px-10 lg:px-20">
 
             <!-- Interrupteur du menu mobile (piloté par le <label> burger, sans JS) -->
@@ -39,8 +40,8 @@
                         <ul class="absolute left-0 top-full z-30 hidden w-44 rounded-xl bg-white py-2 shadow-lg group-hover/pages:block">
                             <li><a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Home</a></li>
                             <li><a href="mentor.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Instructors</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Pricing</a></li>
                             <li><a href="faq.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">FAQ</a></li>
-                            <li><a href="enroll.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Enroll</a></li>
                         </ul>
                     </li>
 
@@ -72,131 +73,38 @@
 
                 <ul class="mt-4 flex flex-col gap-1">
                     <li><a href="index.html" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">Acceuil</a></li>
-                    <li><a href="#" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">Pages</a></li>
-                    <li><a href="#" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">About</a></li>
+                    <li><a href="faq.html" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">FAQ</a></li>
+                    <li><a href="about.html" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">About</a></li>
                     <li class="mt-2"><a href="#" class="block rounded-xl bg-[#12786A] px-6 py-2.5 text-center font-medium text-white hover:bg-[#0F7362]">Sign in</a></li>
                 </ul>
             </div>
         </nav>
 
-        <section class="relative mx-4 mb-10 overflow-hidden rounded-3xl bg-[#083C3B] px-6 py-16 text-center md:mx-10 lg:mx-20 lg:py-20">
+        <!--Bannière-->
+        <section class="relative mx-4 mb-10 overflow-hidden rounded-3xl bg-[#083C3B] px-6 py-14 text-center md:mx-10 md:px-12 lg:mx-20 lg:py-20">
 
             <!-- Formes décoratives -->
-            <div class="pointer-events-none absolute left-6 top-6 h-12 w-12 rounded-br-full bg-[#C6E3B8] lg:left-10 lg:h-16 lg:w-16"></div>
-            <div class="pointer-events-none absolute bottom-8 right-6 h-12 w-12 rounded-bl-full bg-[#D9F55C] lg:right-10 lg:h-16 lg:w-16"></div>
+            <div class="pointer-events-none absolute left-6 top-6 h-12 w-14 rounded-br-full bg-[#A6CCC2] lg:left-10 lg:h-16 lg:w-20"></div>
+            <div class="pointer-events-none absolute bottom-6 right-6 h-12 w-14 rounded-tl-full bg-[#D9F55C] lg:right-10 lg:h-16 lg:w-20"></div>
 
-            <p class="relative z-10 text-xs font-semibold tracking-[0.3em] text-[#b5cac8] lg:text-sm">DEVELOPMENT</p>
-            <h1 class="relative z-10 mx-auto mt-4 max-w-3xl text-2xl font-bold leading-snug text-white md:text-3xl lg:text-4xl">Digital Transformation: How Direct Marketing has evolved in Canada during the Pandemic</h1>
+            <div class="relative z-10 mx-auto flex max-w-3xl flex-col justify-start gap-6">
+                <p class="text-xs font-semibold tracking-[0.3em] text-[#b5cac8] lg:text-sm">Create High-Fidelity Designs and Prototypes <br> <span>in Figma.</span></p>
 
-            <p class="relative z-10 mt-6 text-sm text-[#b5cac8]">
-                <span>By Theresa Webb</span>
-                <span class="px-2" aria-hidden="true">&middot;</span>
-                <time datetime="2023-11-14">14 November 2023</time>
-                <span class="px-2" aria-hidden="true">&middot;</span>
-                <span>8 min read</span>
-            </p>
+                <h1 class="text-2xl font-bold leading-snug text-white md:text-3xl lg:text-4xl">We aspire to create a global landscape where individuals everywhere possess the ability to reshape their destinies through the empowerment of education.</h1>
+
+                <a href="#" class="mt-2 rounded-lg bg-[#12786A] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#0F7362]">Get Started</a>
+            </div>
         </section>
 
     </header>
 
-    <main class="">
+    <main>
 
-        <!--Image de couverture, à cheval sur la bannière-->
-        <figure class="relative z-10 mx-4 left-35 lg:left-65 md:left-48 bottom-7 lg:bottom-1 md:bottom-2 -mt-16 md:mx-10 lg:mx-20 lg:-mt-24">
-            <img src="../images/7.jpeg" alt="Une équipe marketing analysant des données" class="h-56 w-[60%]  rounded-2xl object-cover shadow-lg md:h-72 lg:h-96">
-        </figure>
+        
 
-        <!--Corps de l'article-->
-        <article class="mx-auto max-w-3xl px-4 py-14 lg:py-20">
-
-            <h2 class="text-2xl font-bold text-[#083C3B]">Introduction</h2>
-            <p class="mt-4 leading-relaxed text-gray-500">The pandemic did not invent digital marketing, but it compressed a decade of adoption into eighteen months. Canadian brands that had treated their direct channels as a secondary concern suddenly found themselves with no other way to reach their customers.</p>
-            <p class="mt-4 leading-relaxed text-gray-500">What followed was less a revolution than a rebalancing. Budgets moved from print and events towards owned channels, and the teams that already had clean customer data were the ones able to move first.</p>
-
-            <h2 class="mt-12 text-2xl font-bold text-[#083C3B]">Importance of analytics</h2>
-            <p class="mt-4 leading-relaxed text-gray-500">Direct marketing only works when you can measure it. The organizations that adapted fastest shared one habit: they instrumented their campaigns before launching them, not after.</p>
-            <ul class="mt-6 flex flex-col gap-3">
-                <li class="flex flex-row gap-3 text-gray-500">
-                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#12786A]" aria-hidden="true"></span>
-                    <span class="leading-relaxed">Track the whole journey, not the last click — attribution models that stop at the final touchpoint hide most of the work.</span>
-                </li>
-                <li class="flex flex-row gap-3 text-gray-500">
-                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#12786A]" aria-hidden="true"></span>
-                    <span class="leading-relaxed">Segment before you personalize — a message tailored to the wrong audience performs worse than a generic one.</span>
-                </li>
-                <li class="flex flex-row gap-3 text-gray-500">
-                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#12786A]" aria-hidden="true"></span>
-                    <span class="leading-relaxed">Review your metrics on a fixed cadence, so decisions follow evidence rather than the loudest opinion in the room.</span>
-                </li>
-            </ul>
-
-            <h2 class="mt-12 text-2xl font-bold text-[#083C3B]">How to get started</h2>
-            <p class="mt-4 leading-relaxed text-gray-500">Start small and measurable. Pick a single channel, define what success looks like in numbers, and run it for a full quarter before drawing conclusions. Most teams overestimate what they can change in a month and underestimate what consistency delivers in a year.</p>
-            <p class="mt-4 leading-relaxed text-gray-500">If you are building these skills from scratch, our marketing analytics track walks through the same process end to end, with datasets drawn from real Canadian campaigns.</p>
-
-        </article>
-
-        <!--Articles liés-->
-        <section class="px-4 pb-16 md:px-10 lg:px-20 lg:pb-20">
-            <h2 class="text-2xl font-bold text-[#083C3B] lg:text-3xl">Read More</h2>
-
-            <ul class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-                <li>
-                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 transition-shadow hover:shadow-md">
-                        <img src="../images/2.jpeg" alt="" class="h-44 w-full object-cover">
-                        <div class="flex flex-1 flex-col p-5">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#12786A]">Development</p>
-                            <h3 class="mt-3 font-semibold leading-snug text-[#083C3B]">
-                                <a href="#" class="transition-colors group-hover:text-[#0F7362]">Why remote teams need a written culture more than a chat tool</a>
-                            </h3>
-                            <p class="mt-auto pt-4 text-xs text-gray-500">
-                                <time datetime="2023-10-02">2 October 2023</time>
-                                <span class="px-1" aria-hidden="true">&middot;</span>
-                                6 min read
-                            </p>
-                        </div>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 transition-shadow hover:shadow-md">
-                        <img src="../images/3.jpeg" alt="" class="h-44 w-full object-cover">
-                        <div class="flex flex-1 flex-col p-5">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#12786A]">Design</p>
-                            <h3 class="mt-3 font-semibold leading-snug text-[#083C3B]">
-                                <a href="#" class="transition-colors group-hover:text-[#0F7362]">Designing a course people actually finish</a>
-                            </h3>
-                            <p class="mt-auto pt-4 text-xs text-gray-500">
-                                <time datetime="2023-09-18">18 September 2023</time>
-                                <span class="px-1" aria-hidden="true">&middot;</span>
-                                4 min read
-                            </p>
-                        </div>
-                    </article>
-                </li>
-
-                <li class="sm:col-span-2 lg:col-span-1">
-                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 transition-shadow hover:shadow-md">
-                        <img src="../images/8.jpeg" alt="" class="h-44 w-full object-cover">
-                        <div class="flex flex-1 flex-col p-5">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#12786A]">Analytics</p>
-                            <h3 class="mt-3 font-semibold leading-snug text-[#083C3B]">
-                                <a href="#" class="transition-colors group-hover:text-[#0F7362]">Five dashboards every learning team should own</a>
-                            </h3>
-                            <p class="mt-auto pt-4 text-xs text-gray-500">
-                                <time datetime="2023-08-30">30 August 2023</time>
-                                <span class="px-1" aria-hidden="true">&middot;</span>
-                                7 min read
-                            </p>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-        </section>
     </main>
 
-        <!-- PostFooter -->
+            <!-- PostFooter -->
     <section class="relative overflow-hidden bg-[#E8F7F3] px-4 py-16 text-center md:px-10 lg:px-20 lg:py-24">
 
         <!-- Formes décoratives -->
@@ -223,10 +131,7 @@
                 <button type="submit" class="shrink-0 rounded-lg bg-[#0F7362] px-8 py-3.5 font-medium text-white transition-colors hover:cursor-pointer hover:bg-[#12786A] sm:rounded-none">Subscribe</button>
             </form>
         </div>
-        
     </section>
-
-
 
     <!--Footer-->
     <footer class="bg-[#083C3B] px-4 py-12 md:px-10 lg:px-20 lg:py-16">
