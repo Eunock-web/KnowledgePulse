@@ -110,6 +110,10 @@ Elearning/
 | Formes décoratives | `#A6CCC2`, `#C6E3B8` | Verts pâles |
 
 
+### Documentation des classes
+
+Chacune des 397 classes Tailwind employées dans le projet est décrite — CSS produit et raison de son emploi — dans **[TAILWIND.md](TAILWIND.md)**.
+
 ### Conventions
 
 - Interface et contenu en **anglais**, commentaires du code en **français**.
