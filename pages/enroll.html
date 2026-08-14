@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>KnowledgePulse | Enroll</title>
+</head>
+<body>
+    <!--Header-->
+    <header class=" bg-[#E8F7F3] flex flex-col gap-5 ">
+        <nav class="group px-4 py-4 md:px-10 lg:px-20">
+
+            <!-- Interrupteur du menu mobile (piloté par le <label> burger, sans JS) -->
+            <input type="checkbox" id="menu-toggle" class="sr-only">
+
+            <div class="flex items-center justify-between gap-6">
+                <a href="index.html" class="shrink-0 text-2xl font-bold text-[#12786A]">KnowledgePulse</a>
+
+                <!-- Recherche (desktop) -->
+                <div class="hidden min-w-0 flex-1 items-center gap-2 rounded-lg bg-white px-4 py-2.5 lg:flex lg:max-w-sm">
+                    <svg class="h-5 w-5 shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"/>
+                    </svg>
+                    <label for="nav-search" class="sr-only">Search courses</label>
+                    <input id="nav-search" type="search" placeholder="Search courses" class="w-full bg-transparent text-gray-700 placeholder-gray-400 outline-none [&::-webkit-search-cancel-button]:hidden">
+                </div>
+
+                <!-- Liens (desktop) -->
+                <ul class="hidden shrink-0 items-center gap-8 lg:flex">
+                    <li><a href="#" class="font-medium text-[#0F7362] transition-colors hover:text-[#083C3B]">Courses</a></li>
+
+                    <li class="group/pages relative">
+                        <button type="button" class="flex items-center gap-1 font-medium text-[#0F7362] transition-colors hover:cursor-pointer hover:text-[#083C3B]">
+                            Pages
+                            <svg class="h-4 w-4 transition-transform group-hover/pages:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <ul class="absolute left-0 top-full z-30 hidden w-44 rounded-xl bg-white py-2 shadow-lg group-hover/pages:block">
+                            <li><a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Home</a></li>
+                            <li><a href="mentor.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Instructors</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">Pricing</a></li>
+                            <li><a href="faq.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E8F7F3]">FAQ</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html" class="font-medium text-[#0F7362] transition-colors hover:text-[#083C3B]">About</a></li>
+                    <li><a href="#" class="block rounded-xl bg-[#12786A] px-6 py-2.5 font-medium text-white transition-colors hover:bg-[#0F7362]">Sign in</a></li>
+                </ul>
+
+                <!-- Bouton burger (mobile / tablette) -->
+                <label for="menu-toggle" class="rounded-lg p-2 text-[#0F7362] hover:cursor-pointer hover:bg-white/60 lg:hidden">
+                    <span class="sr-only">Ouvrir le menu</span>
+                    <svg class="h-6 w-6 group-has-checked:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg class="hidden h-6 w-6 group-has-checked:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                    </svg>
+                </label>
+            </div>
+
+            <!-- Panneau déroulant (mobile / tablette) -->
+            <div class="hidden pt-4 group-has-checked:block lg:hidden">
+                <div class="flex items-center gap-2 rounded-lg bg-white px-4 py-2.5">
+                    <svg class="h-5 w-5 shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"/>
+                    </svg>
+                    <label for="nav-search-mobile" class="sr-only">Search courses</label>
+                    <input id="nav-search-mobile" type="search" placeholder="Search courses" class="w-full min-w-0 bg-transparent text-gray-700 placeholder-gray-400 outline-none [&::-webkit-search-cancel-button]:hidden">
+                </div>
+
+                <ul class="mt-4 flex flex-col gap-1">
+                    <li><a href="index.html" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">Acceuil</a></li>
+                    <li><a href="faq.html" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">FAQ</a></li>
+                    <li><a href="about.html" class="block rounded-lg px-2 py-2 font-medium text-[#0F7362] hover:bg-white/60">About</a></li>
+                    <li class="mt-2"><a href="#" class="block rounded-xl bg-[#12786A] px-6 py-2.5 text-center font-medium text-white hover:bg-[#0F7362]">Sign in</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Bannière-->
+        <section class="relative mx-4 mb-10 overflow-hidden rounded-3xl bg-[#083C3B] px-6 py-14 md:mx-10 md:px-12 lg:mx-20 lg:py-20">
+
+            <!-- Formes décoratives -->
+            <div class="pointer-events-none absolute right-20 top-20 h-12 w-14 rounded-br-full bg-[#A6CCC2] lg:right-60 lg:h-16 lg:w-20"></div>
+            <div class="pointer-events-none absolute bottom-20 right-14  h-12 w-14 rounded-tl-full bg-[#D9F55C] lg:right-30 lg:h-16 lg:w-20"></div>
+
+            <div class="relative z-10 flex max-w-2xl flex-col items-start gap-5">
+                <h1 class="text-2xl font-bold leading-snug text-white md:text-4xl lg:text-6xl">Create High-Fidelity Designs and Prototypes in Figma.</h1>
+
+                <p class="text-sm leading-relaxed text-[#b5cac8] lg:text-base">Go from an empty file to a clickable prototype, working on a single product from the first frame to developer handoff.</p>
+
+                <ul class="flex flex-row flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#b5cac8]">
+                    <li class="flex flex-row items-center gap-2">
+                        <svg class="h-4 w-4 text-[#D9F55C]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.12 5.11a.56.56 0 0 0 .47.34l5.52.44c.51.04.72.68.33 1.02l-4.2 3.6a.56.56 0 0 0-.18.55l1.28 5.39c.12.5-.42.9-.86.63l-4.73-2.89a.56.56 0 0 0-.58 0l-4.73 2.89c-.44.27-.98-.13-.86-.63l1.28-5.39a.56.56 0 0 0-.18-.55l-4.2-3.6c-.39-.34-.18-.98.33-1.02l5.52-.44a.56.56 0 0 0 .47-.34l2.12-5.11Z"/>
+                        </svg>
+                        4.8 (44k reviews)
+                    </li>
+                    <li>12,450 students</li>
+                    <li>18 hours &middot; 7 lessons</li>
+                </ul>
+
+                <div class="mt-2 flex flex-row items-center gap-3">
+                    <img src="../images/1.jpeg" alt="" class="h-10 w-10 shrink-0 rounded-full object-cover">
+                    <div class="text-left">
+                        <p class="text-sm font-medium text-white">Theresa Webb</p>
+                        <p class="text-xs text-[#b5cac8]">UX/UI designer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <main class="bg-white">
+
+        <div class="px-4 py-12 md:px-10 lg:px-20 lg:py-16">
+            <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+
+                <!--Colonne principale-->
+                <div class="flex min-w-0 flex-1 flex-col gap-10">
+
+                    <img src="../images/3.jpeg" alt="Aperçu du cours Figma" class="h-56 w-full rounded-2xl object-cover md:h-80">
+
+                    <!--Caractéristiques-->
+                    <ul class="flex flex-row flex-wrap gap-3">
+                        <li class="rounded-full bg-[#E8F7F3] px-4 py-1.5 text-xs font-medium text-[#0F7362]">Beginner level</li>
+                        <li class="rounded-full bg-[#E8F7F3] px-4 py-1.5 text-xs font-medium text-[#0F7362]">18 hours</li>
+                        <li class="rounded-full bg-[#E8F7F3] px-4 py-1.5 text-xs font-medium text-[#0F7362]">7 lessons</li>
+                        <li class="rounded-full bg-[#E8F7F3] px-4 py-1.5 text-xs font-medium text-[#0F7362]">Certificate included</li>
+                    </ul>
+
+                    <!--Description-->
+                    <section>
+                        <h2 class="text-xl font-bold text-[#083C3B] lg:text-2xl">Course Description</h2>
+                        <p class="mt-4 leading-relaxed text-gray-500">This course takes you from an empty Figma file to a clickable, high-fidelity prototype you can hand to a developer. You will work on a single product from start to finish, so every technique is learned in context rather than in isolation.</p>
+                        <p class="mt-4 leading-relaxed text-gray-500">We cover auto layout, components and variants in depth, because they are what separate a static mockup from a design system that survives its first round of feedback. By the last lesson you will have a portfolio-ready case study and the file structure habits that make handoff painless.</p>
+                    </section>
+
+                    <!--Programme-->
+                    <section>
+                        <h2 class="text-xl font-bold text-[#083C3B] lg:text-2xl">Course Content</h2>
+
+                        <div class="mt-6 flex flex-col gap-3">
+
+                            <details name="lessons" open class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 1 &mdash; Getting started with Figma</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        12:40
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Set up your workspace, learn the canvas shortcuts you will use every day, and create your first frames.</p>
+                            </details>
+
+                            <details name="lessons" class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 2 &mdash; Frames, grids and layout</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        18:05
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Build responsive layouts with layout grids and constraints, and understand when to reach for each.</p>
+                            </details>
+
+                            <details name="lessons" class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 3 &mdash; Auto layout in depth</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        24:30
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Nest auto layouts, control spacing and resizing, and stop fighting your designs every time the copy changes.</p>
+                            </details>
+
+                            <details name="lessons" class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 4 &mdash; Components and variants</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        21:15
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Turn repeated elements into a component library, then use variants to handle every state in one place.</p>
+                            </details>
+
+                            <details name="lessons" class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 5 &mdash; Styles, tokens and theming</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        16:50
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Define color, text and effect styles once, and switch an entire file between light and dark themes.</p>
+                            </details>
+
+                            <details name="lessons" class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 6 &mdash; Prototyping and interactions</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        28:20
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Wire up flows, smart animate between states, and record a walkthrough you can share with stakeholders.</p>
+                            </details>
+
+                            <details name="lessons" class="group rounded-lg bg-[#E8F7F3]">
+                                <summary class="flex list-none flex-row items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-[#083C3B] hover:cursor-pointer [&::-webkit-details-marker]:hidden">
+                                    <span>Lesson 7 &mdash; Handoff to developers</span>
+                                    <span class="flex shrink-0 flex-row items-center gap-3 text-xs font-normal text-[#0F7362]">
+                                        14:05
+                                        <svg class="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <p class="px-5 pb-4 text-sm leading-relaxed text-gray-500">Document your file, name layers so they survive contact with a codebase, and export assets cleanly.</p>
+                            </details>
+                        </div>
+                    </section>
+                </div>
+
+                <!--Carte d'inscription-->
+                <aside class="w-full shrink-0 lg:sticky lg:top-6 lg:w-80">
+                    <div class="rounded-xl border border-gray-200 p-6 shadow-sm">
+
+                        <p class="text-2xl font-bold text-[#083C3B]">Price $29</p>
+                        <a href="#" class="mt-5 block rounded-lg bg-[#0F7362] py-3 text-center font-medium text-white transition-colors hover:bg-[#12786A]">Enroll Now</a>
+
+                        <h2 class="mt-8 text-base font-semibold text-[#083C3B]">What You'll Get</h2>
+                        <ul class="mt-4 flex flex-col gap-3">
+                            <li class="flex flex-row items-start gap-3 text-sm text-gray-500">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#12786A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+                                </svg>
+                                18 hours of on-demand video
+                            </li>
+                            <li class="flex flex-row items-start gap-3 text-sm text-gray-500">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#12786A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+                                </svg>
+                                12 downloadable Figma files
+                            </li>
+                            <li class="flex flex-row items-start gap-3 text-sm text-gray-500">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#12786A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+                                </svg>
+                                Lifetime access on any device
+                            </li>
+                            <li class="flex flex-row items-start gap-3 text-sm text-gray-500">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#12786A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+                                </svg>
+                                Direct feedback from the instructor
+                            </li>
+                            <li class="flex flex-row items-start gap-3 text-sm text-gray-500">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#12786A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+                                </svg>
+                                Certificate of completion
+                            </li>
+                            <li class="flex flex-row items-start gap-3 text-sm text-gray-500">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#12786A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+                                </svg>
+                                30-day money-back guarantee
+                            </li>
+                        </ul>
+
+                        <hr class="my-8 border-gray-200">
+
+                        <h2 class="text-base font-semibold text-[#083C3B]">Share this course</h2>
+                        <ul class="mt-4 flex flex-row gap-3">
+                            <li>
+                                <a href="#" aria-label="Partager sur Instagram" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-[#0F7362] transition-colors hover:border-[#12786A] hover:bg-[#12786A] hover:text-white">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Partager sur Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-[#0F7362] transition-colors hover:border-[#12786A] hover:bg-[#12786A] hover:text-white">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Partager sur Twitter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-[#0F7362] transition-colors hover:border-[#12786A] hover:bg-[#12786A] hover:text-white">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 9.99 9.99 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Partager sur YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-[#0F7362] transition-colors hover:border-[#12786A] hover:bg-[#12786A] hover:text-white">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <hr class="my-8 border-gray-200">
+
+                        <h2 class="text-base font-semibold text-[#083C3B]">Tags</h2>
+                        <ul class="mt-4 flex flex-row flex-wrap gap-2">
+                            <li><a href="#" class="block rounded-full bg-[#E8F7F3] px-3 py-1.5 text-xs text-[#0F7362] transition-colors hover:bg-[#12786A] hover:text-white">Figma</a></li>
+                            <li><a href="#" class="block rounded-full bg-[#E8F7F3] px-3 py-1.5 text-xs text-[#0F7362] transition-colors hover:bg-[#12786A] hover:text-white">UI Design</a></li>
+                            <li><a href="#" class="block rounded-full bg-[#E8F7F3] px-3 py-1.5 text-xs text-[#0F7362] transition-colors hover:bg-[#12786A] hover:text-white">Prototyping</a></li>
+                            <li><a href="#" class="block rounded-full bg-[#E8F7F3] px-3 py-1.5 text-xs text-[#0F7362] transition-colors hover:bg-[#12786A] hover:text-white">Design system</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!--Derniers cours-->
+        <section class="px-4 pb-16 md:px-10 lg:px-20 lg:pb-20">
+            <h2 class="text-xl font-bold text-[#083C3B] lg:text-2xl">Our Latest Courses</h2>
+
+            <ul class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <li>
+                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 transition-shadow hover:shadow-md">
+                        <img src="../images/2.jpeg" alt="" class="h-40 w-full object-cover">
+                        <div class="flex flex-1 flex-col gap-3 p-4">
+                            <div class="flex flex-row items-center gap-2">
+                                <img src="../images/1.jpeg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover">
+                                <div>
+                                    <p class="text-xs font-semibold text-[#083C3B]">Theresa Webb</p>
+                                    <p class="text-xs text-gray-500">UX/UI designer</p>
+                                </div>
+                            </div>
+                            <h3 class="font-semibold text-[#0F7362]"><a href="#" class="transition-colors group-hover:text-[#083C3B]">Design Systems from Scratch</a></h3>
+                            <p class="text-xs leading-relaxed text-gray-500">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <div class="mt-auto flex flex-row items-center gap-2 pt-2 text-sm">
+                                <span class="font-semibold text-[#083C3B]">4.8</span>
+                                <svg class="h-4 w-4 text-[#083C3B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.12 5.11a.56.56 0 0 0 .47.34l5.52.44c.51.04.72.68.33 1.02l-4.2 3.6a.56.56 0 0 0-.18.55l1.28 5.39c.12.5-.42.9-.86.63l-4.73-2.89a.56.56 0 0 0-.58 0l-4.73 2.89c-.44.27-.98-.13-.86-.63l1.28-5.39a.56.56 0 0 0-.18-.55l-4.2-3.6c-.39-.34-.18-.98.33-1.02l5.52-.44a.56.56 0 0 0 .47-.34l2.12-5.11Z"/>
+                                </svg>
+                                <span class="text-gray-500">(44k reviews)</span>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 transition-shadow hover:shadow-md">
+                        <img src="../images/7.jpeg" alt="" class="h-40 w-full object-cover">
+                        <div class="flex flex-1 flex-col gap-3 p-4">
+                            <div class="flex flex-row items-center gap-2">
+                                <img src="../images/6.jpeg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover">
+                                <div>
+                                    <p class="text-xs font-semibold text-[#083C3B]">Kathryn Murphy</p>
+                                    <p class="text-xs text-gray-500">Data Scientist</p>
+                                </div>
+                            </div>
+                            <h3 class="font-semibold text-[#0F7362]"><a href="#" class="transition-colors group-hover:text-[#083C3B]">Product Analytics for Designers</a></h3>
+                            <p class="text-xs leading-relaxed text-gray-500">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <div class="mt-auto flex flex-row items-center gap-2 pt-2 text-sm">
+                                <span class="font-semibold text-[#083C3B]">4.8</span>
+                                <svg class="h-4 w-4 text-[#083C3B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.12 5.11a.56.56 0 0 0 .47.34l5.52.44c.51.04.72.68.33 1.02l-4.2 3.6a.56.56 0 0 0-.18.55l1.28 5.39c.12.5-.42.9-.86.63l-4.73-2.89a.56.56 0 0 0-.58 0l-4.73 2.89c-.44.27-.98-.13-.86-.63l1.28-5.39a.56.56 0 0 0-.18-.55l-4.2-3.6c-.39-.34-.18-.98.33-1.02l5.52-.44a.56.56 0 0 0 .47-.34l2.12-5.11Z"/>
+                                </svg>
+                                <span class="text-gray-500">(44k reviews)</span>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="sm:col-span-2 lg:col-span-1">
+                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 transition-shadow hover:shadow-md">
+                        <img src="../images/8.jpeg" alt="" class="h-40 w-full object-cover">
+                        <div class="flex flex-1 flex-col gap-3 p-4">
+                            <div class="flex flex-row items-center gap-2">
+                                <img src="../images/4.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover">
+                                <div>
+                                    <p class="text-xs font-semibold text-[#083C3B]">Darrell Steward</p>
+                                    <p class="text-xs text-gray-500">UX/UI designer</p>
+                                </div>
+                            </div>
+                            <h3 class="font-semibold text-[#0F7362]"><a href="#" class="transition-colors group-hover:text-[#083C3B]">Mobile Interfaces that Convert</a></h3>
+                            <p class="text-xs leading-relaxed text-gray-500">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <div class="mt-auto flex flex-row items-center gap-2 pt-2 text-sm">
+                                <span class="font-semibold text-[#083C3B]">4.8</span>
+                                <svg class="h-4 w-4 text-[#083C3B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.12 5.11a.56.56 0 0 0 .47.34l5.52.44c.51.04.72.68.33 1.02l-4.2 3.6a.56.56 0 0 0-.18.55l1.28 5.39c.12.5-.42.9-.86.63l-4.73-2.89a.56.56 0 0 0-.58 0l-4.73 2.89c-.44.27-.98-.13-.86-.63l1.28-5.39a.56.56 0 0 0-.18-.55l-4.2-3.6c-.39-.34-.18-.98.33-1.02l5.52-.44a.56.56 0 0 0 .47-.34l2.12-5.11Z"/>
+                                </svg>
+                                <span class="text-gray-500">(44k reviews)</span>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+            <!-- PostFooter -->
+    <section class="relative overflow-hidden bg-[#E8F7F3] px-4 py-16 text-center md:px-10 lg:px-20 lg:py-24">
+
+        <!-- Formes décoratives -->
+        <div class="pointer-events-none absolute bottom-10 left-4 h-14 w-24 rounded-b-full bg-[#A6CCC2] md:left-10 lg:h-20 lg:w-36"></div>
+        <div class="pointer-events-none absolute right-4 top-10 h-14 w-24 rounded-b-full bg-[#A6CCC2] md:right-10 lg:h-20 lg:w-36"></div>
+
+        <div class="relative z-10 mx-auto flex max-w-xl flex-col items-center">
+            <h2 class="text-3xl font-bold text-[#083C3B] lg:text-4xl">
+                <span class="relative inline-block">
+                    <!-- Cercle tracé à la main -->
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-[150%] w-[118%] -translate-x-1/2 -translate-y-1/2" viewBox="0 0 200 70" preserveAspectRatio="none" fill="none" stroke="#D9F55C" stroke-width="3" aria-hidden="true">
+                        <path stroke-linecap="round" d="M170 20C163 9 124 3 88 4 46 5 9 15 6 33c-3 18 36 32 90 32 41 0 77-11 80-27 1-7-4-13-12-17"/>
+                    </svg>
+                    <span class="relative">Subscribe</span>
+                </span>
+                Our Newsletter
+            </h2>
+
+            <p class="mt-4 max-w-md text-sm leading-relaxed text-[#0F7362] lg:text-base">Join now to receive personalized recommendations from the full Coursera catalog.</p>
+
+            <form class="mt-8 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:gap-0 sm:overflow-hidden sm:rounded-lg sm:shadow-sm">
+                <label for="newsletter-email" class="sr-only">Enter your mail</label>
+                <input id="newsletter-email" type="email" required placeholder="Enter your mail" class="w-full min-w-0 rounded-lg bg-white px-5 py-3.5 text-left text-gray-700 placeholder-gray-400 outline-none sm:flex-1 sm:rounded-none">
+                <button type="submit" class="shrink-0 rounded-lg bg-[#0F7362] px-8 py-3.5 font-medium text-white transition-colors hover:cursor-pointer hover:bg-[#12786A] sm:rounded-none">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-[#083C3B] px-4 py-12 md:px-10 lg:px-20 lg:py-16">
+        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+
+            <!-- Marque + réseaux -->
+            <div class="flex flex-col gap-5 sm:col-span-2">
+                <h2 class="text-2xl font-bold text-white">KnowledgePulse</h2>
+                <p class="max-w-sm text-[#b5cac8]">Join now to receive personalized recommendations from the full Coursera catalog.</p>
+
+                <ul class="flex flex-row gap-3">
+                    <li>
+                        <a href="#" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full border border-[#2c5a56] text-[#b5cac8] transition-colors hover:border-white hover:bg-white hover:text-[#083C3B]">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-[#2c5a56] text-[#b5cac8] transition-colors hover:border-white hover:bg-white hover:text-[#083C3B]">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Twitter" class="flex h-9 w-9 items-center justify-center rounded-full border border-[#2c5a56] text-[#b5cac8] transition-colors hover:border-white hover:bg-white hover:text-[#083C3B]">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 9.99 9.99 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-[#2c5a56] text-[#b5cac8] transition-colors hover:border-white hover:bg-white hover:text-[#083C3B]">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-lg font-semibold text-white">Company</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">About us</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Blog</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Contact us</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Pricing</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-lg font-semibold text-white">Support</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Help center</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Terms of service</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Legal</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Privacy policy</a></li>
+                    <li><a href="#" class="text-[#b5cac8] transition-colors hover:text-white">Status</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="my-8 border-[#2c5a56] lg:my-10">
+
+        <p class="text-sm text-[#b5cac8]">Designed by @Rubel, 2023, All rights reserved</p>
+    </footer>
+</body>
+</html>
