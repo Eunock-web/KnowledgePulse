@@ -88,8 +88,6 @@ Elearning/
 │   ├── enroll.html      # Fiche de cours
 │   ├── faq.html         # Questions fréquentes
 │   └── about.html       # Article de blog
-├── css/                 # Réservé à une future feuille de styles
-├── js/                  # Réservé à de futurs scripts
 ├── src/                 # Réservé à une compilation locale de Tailwind
 └── README.md
 ```
